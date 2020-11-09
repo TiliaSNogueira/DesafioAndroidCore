@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.e.digitalhousefoods.ui.LoginFragment"
+        android:label="Digital House Foods"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_listagemDeRestaurantes"
+            app:destination="@id/listagemDeRestaurantes" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.e.digitalhousefoods.ui.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_listagemDeRestaurantes"
+            app:destination="@id/listagemDeRestaurantes" />
+    </fragment>
+    <activity
+        android:id="@+id/listagemDeRestaurantes"
+        android:name="com.e.digitalhousefoods.ui.ListagemDeRestaurantes"
+        android:label="activity_listagem_de_restaurantes"
+        tools:layout="@layout/activity_listagem_de_restaurantes" />
+
+</navigation>

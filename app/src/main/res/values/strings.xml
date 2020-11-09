@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Digital House Foods</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="or">OR</string>
+    <string name="register">REGISTER</string>
+    <string name="Name">Name</string>
+    <string name="Repeatpassword">Repeat Password</string>
+    <string name="nomerestaurante">Nome do Restaurante</string>
+    <string name="foto_de_capa_do_restaurante">Foto de capa do restaurante</string>
+    <string name="endereco_do_restaurante">Endereço do Restaurante</string>
+    <string name="_12_12">12:12</string>
+    <string name="fecha_as">Fecha às</string>
+    <string name="foto_do_restaurante">Foto de capa do Restaurante</string>
+    <string name="nome_do_restaurante">Nome do Restaurante</string>
+    <string name="pratos_principais">Pratos Principais</string>
+
+</resources>
