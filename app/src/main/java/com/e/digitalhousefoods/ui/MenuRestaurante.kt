@@ -2,53 +2,43 @@ package com.e.digitalhousefoods.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.e.digitalhousefoods.MenuRestauranteAdapter
-import com.e.digitalhousefoods.Prato
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.e.digitalhousefoods.R
-import com.e.digitalhousefoods.Restaurante
-import kotlinx.android.synthetic.main.fragment_lista_pratos.*
+import com.e.digitalhousefoods.modelo.Restaurante
+import kotlinx.android.synthetic.main.activity_listagem_de_restaurantes.*
 
 class MenuRestaurante : AppCompatActivity() {
 
-//    //lista estática dos pratos
-//    val listaPratos: MutableList<Prato> = getPratos()
-//
-//    //adapter
-//    val adapPratos = MenuRestauranteAdapter(listaPratos, this)
-
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_restaurante)
 
-//        //montando a recycler view
-//        frag_lista_pratos_recyclerview.adapter = adapPratos
-//        frag_lista_pratos_recyclerview.layoutManager = GridLayoutManager(this, 2)
-//        frag_lista_pratos_recyclerview.setHasFixedSize(true)
+        //pegando extra da intent que veio da listagem de restaurante
+        var restauranteEscolhido = intent.getSerializableExtra("key") as? Restaurante
+
+
+//        setSupportActionBar(listagem_rest_toolbar)
 //
+//        navController = findNavController(R.id.nav_host_fragment_menuRestaurante)
 //
-//    }
+//        appBarConfiguration = AppBarConfiguration(navController.graph)
 //
-//    override fun pratoClick(position: Int) {
-//        Toast.makeText(this, "Prato clicado", Toast.LENGTH_SHORT).show()
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+
+
+    }
+
+//    override fun onSupportNavigateUp(): Boolean {
+//        return navController.navigateUp(appBarConfiguration) ||
+//                super.onSupportNavigateUp()
 //    }
 
-//    fun getPratos(): MutableList<Prato> {
-//        return mutableListOf(
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
-//            Prato("Salada com molho Gengibre", R.drawable.imgaoyama)
-//        )
-//
-    }
+
 }

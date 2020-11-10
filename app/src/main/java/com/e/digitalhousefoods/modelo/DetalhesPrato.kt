@@ -1,10 +1,11 @@
-package com.e.digitalhousefoods
+package com.e.digitalhousefoods.modelo
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.e.digitalhousefoods.R
 
 
 class DetalhesPrato : Fragment() {

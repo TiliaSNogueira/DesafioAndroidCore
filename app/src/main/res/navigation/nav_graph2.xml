@@ -8,6 +8,16 @@
     <fragment
         android:id="@+id/listaPratosFragment"
         android:name="com.e.digitalhousefoods.ui.ListaPratosFragment"
-        android:label="fragment_lista_pratos"
-        tools:layout="@layout/fragment_lista_pratos" />
+        android:label=" "
+        tools:layout="@layout/fragment_lista_pratos">
+        <action
+            android:id="@+id/action_listaPratosFragment_to_detalhesPrato"
+            app:destination="@id/detalhesPrato" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesPrato"
+        android:name="com.e.digitalhousefoods.modelo.DetalhesPrato"
+        android:label="fragment_detalhes_prato"
+        tools:layout="@layout/fragment_detalhes_prato">
+    </fragment>
 </navigation>

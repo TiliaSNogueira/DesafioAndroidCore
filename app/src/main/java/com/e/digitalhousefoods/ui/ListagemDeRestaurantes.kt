@@ -1,17 +1,14 @@
 package com.e.digitalhousefoods.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.e.digitalhousefoods.ListRestaurantesAdapter
 import com.e.digitalhousefoods.R
-import com.e.digitalhousefoods.Restaurante
+import com.e.digitalhousefoods.adapter.ListRestaurantesAdapter
+import com.e.digitalhousefoods.modelo.Restaurante
 import kotlinx.android.synthetic.main.activity_listagem_de_restaurantes.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class ListagemDeRestaurantes : AppCompatActivity(),
     ListRestaurantesAdapter.OnRestauranteClickListener {
@@ -60,8 +57,14 @@ class ListagemDeRestaurantes : AppCompatActivity(),
 
     override fun restauranteClick(position: Int) {
         //vai abrir o menu deste restaurante clicado
-        Toast.makeText(this, "Restaurante clicado", Toast.LENGTH_SHORT).show()
+        val restEscolhido = listaRestaurantes[position]
+
+
+        Toast.makeText(this, restEscolhido.nome, Toast.LENGTH_SHORT).show()
+
+        //envia o restaurante clicado pra outra activity
         val intentVaiParaRestaurante = Intent(this, MenuRestaurante::class.java)
+        intentVaiParaRestaurante.putExtra("key", restEscolhido)
         startActivity(intentVaiParaRestaurante)
     }
 

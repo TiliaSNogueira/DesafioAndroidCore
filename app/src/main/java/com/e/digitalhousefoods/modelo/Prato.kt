@@ -1,4 +1,4 @@
-package com.e.digitalhousefoods
+package com.e.digitalhousefoods.modelo
 
 import java.io.Serializable
 

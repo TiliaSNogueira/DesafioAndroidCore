@@ -1,12 +1,13 @@
-package com.e.digitalhousefoods
+package com.e.digitalhousefoods.adapter
 
 import android.view.LayoutInflater
-import android.view.OrientationEventListener
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.e.digitalhousefoods.modelo.Prato
+import com.e.digitalhousefoods.R
 
 class MenuRestauranteAdapter(private val listaPratos: MutableList<Prato>, val listener: onPratoClickListener) : RecyclerView.Adapter<MenuRestauranteAdapter.PratosViewhHolder>() {
 

@@ -17,5 +17,8 @@
     <string name="foto_do_restaurante">Foto de capa do Restaurante</string>
     <string name="nome_do_restaurante">Nome do Restaurante</string>
     <string name="pratos_principais">Pratos Principais</string>
+    <string name="imagem_do_prato_escolhido">Imagem do prato escolhido</string>
+    <string name="nome_do_prato">Nome do prato</string>
+    <string name="texto_descritivo">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis</string>
 
 </resources>
