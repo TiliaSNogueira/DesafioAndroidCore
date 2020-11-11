@@ -16,7 +16,7 @@ class DetalhesPrato : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detalhes_prato, container, false)
+        return inflater.inflate(R.layout.fragment_descricao_prato, container, false)
     }
 
 }

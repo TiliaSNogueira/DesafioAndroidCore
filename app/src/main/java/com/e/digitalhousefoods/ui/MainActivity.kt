@@ -30,8 +30,7 @@ class MainActivity : AppCompatActivity() {
         //instanciando toolbar
         setSupportActionBar(main_act_toolbar)
 
-        //mudando cor da arrow back, nao deu certo
-        main_act_toolbar.navigationIcon?.setTint(Color.WHITE)
+
 
 
         appBarConfiguration = AppBarConfiguration(navController.graph)

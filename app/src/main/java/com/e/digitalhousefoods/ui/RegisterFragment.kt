@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.e.digitalhousefoods.R
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login.view.*
+import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 
 
@@ -33,8 +35,10 @@ class RegisterFragment : Fragment() {
         view.frag_register_register.setBackgroundColor(Color.RED)
 
         view.frag_register_register.setOnClickListener(){
-            findNavController().navigate(R.id.action_registerFragment_to_listagemDeRestaurantes)
+            findNavController().navigate(R.id.action_registerFragment_to_listaDeRestaurantesFragment)
         }
+
+
 
         return view
     }

@@ -9,27 +9,43 @@
         android:id="@+id/loginFragment"
         android:name="com.e.digitalhousefoods.ui.LoginFragment"
         android:label="Digital House Foods"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_listagemDeRestaurantes"
-            app:destination="@id/listagemDeRestaurantes" />
+            android:id="@+id/action_loginFragment_to_listaDeRestaurantesFragment"
+            app:destination="@id/listaDeRestaurantesFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.e.digitalhousefoods.ui.RegisterFragment"
         android:label="Register"
-        tools:layout="@layout/fragment_register" >
+        tools:layout="@layout/fragment_register">
         <action
-            android:id="@+id/action_registerFragment_to_listagemDeRestaurantes"
-            app:destination="@id/listagemDeRestaurantes" />
+            android:id="@+id/action_registerFragment_to_listaDeRestaurantesFragment"
+            app:destination="@id/listaDeRestaurantesFragment" />
     </fragment>
-    <activity
-        android:id="@+id/listagemDeRestaurantes"
-        android:name="com.e.digitalhousefoods.ui.ListagemDeRestaurantes"
-        android:label="activity_listagem_de_restaurantes"
-        tools:layout="@layout/activity_listagem_de_restaurantes" />
+    <fragment
+        android:id="@+id/listaDeRestaurantesFragment"
+        android:name="com.e.digitalhousefoods.ui.ListaDeRestaurantesFragment"
+        android:label="Digital House Foods">
+        <action
+            android:id="@+id/action_listaDeRestaurantesFragment_to_listaPratosFragment2"
+            app:destination="@id/listaPratosFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaPratosFragment2"
+        android:name="com.e.digitalhousefoods.ui.ListaPratosFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_lista_pratos">
+        <action
+            android:id="@+id/action_listaPratosFragment2_to_descricaoPrato"
+            app:destination="@id/descricaoPrato" />
+    </fragment>
+    <fragment
+        android:id="@+id/descricaoPrato"
+        android:name="com.e.digitalhousefoods.ui.DescricaoPrato"
+        android:label=" " />
 
 </navigation>

@@ -10,7 +10,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="12dp">
@@ -24,7 +25,7 @@
                 android:id="@+id/item_img_rest"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:contentDescription="@string/foto_de_capa_do_restaurante" />
 
 
@@ -61,6 +62,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/fecha_as"
+                        android:layout_marginEnd="4dp"
                         android:textColor="#686565"
                         android:textSize="14sp" />
 
