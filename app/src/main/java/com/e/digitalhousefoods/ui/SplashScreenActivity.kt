@@ -18,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun callLogin() {
-        val intenLogin = Intent(this, MainActivity::class.java)
+        val intenLogin = Intent(this, HomeActivity::class.java)
         startActivity(intenLogin)
     }
 }
