@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.e.digitalhousefoods.modelo.Prato
 import com.e.digitalhousefoods.R
+import com.e.digitalhousefoods.modelo.Prato
 
 class MenuRestauranteAdapter(private val listaPratos: MutableList<Prato>, val listener: onPratoClickListener) : RecyclerView.Adapter<MenuRestauranteAdapter.PratosViewhHolder>() {
 
-    //infla layout do item na recyclerview
+    //infla layout do item prato na recyclerview
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PratosViewhHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_prato, parent, false)
         return PratosViewhHolder(itemView)
@@ -25,38 +25,28 @@ class MenuRestauranteAdapter(private val listaPratos: MutableList<Prato>, val li
         //vinculando os dados
         holder.imagemPrato.setImageResource(prato.imagem)
         holder.nomePrato.text = prato.nome
-    }
 
+        holder.itemView.setOnClickListener{
+           listener.pratoClick(position)
+        }
+
+    }
 
     //pega tamanho da lista
     override fun getItemCount() = listaPratos.size
 
 
-    //interface do evendo de click
+    //interface do evento de click que será implementada na listaDePratosFragment
     interface onPratoClickListener {
         fun pratoClick(position: Int)
     }
 
 
-
-
-    inner class PratosViewhHolder (itemView : View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-
-        //para que toda a view seja clicavel
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        //montando a view
+    inner class PratosViewhHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
+        //pegando os campos do layout e transformando em variaveis para manipularmos
         val nomePrato : TextView = itemView.findViewById(R.id.item_prato_nome)
         val imagemPrato : ImageView = itemView.findViewById(R.id.item_prato_img)
 
-
-        override fun onClick(v: View?) {
-            val positionPrato = adapterPosition
-            if (RecyclerView.NO_POSITION != position)
-                listener.pratoClick(position)
-        }
 
     }
 }

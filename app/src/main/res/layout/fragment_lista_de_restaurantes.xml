@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/listaDeRestaurantesFragment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Digital House Foods"
+        app:titleTextColor="@color/white" />
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragmentListaDeRestaurantes_recyclerview"
         android:layout_width="match_parent"

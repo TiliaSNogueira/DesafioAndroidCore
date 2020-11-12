@@ -14,14 +14,10 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         val handle = Handler()
-        handle.postDelayed({ mostrarLogin() }, 1500)
-        //vai para a Activity main (login)
-
-
-
+        handle.postDelayed({ callLogin() }, 1500)
     }
 
-    private fun mostrarLogin() {
+    private fun callLogin() {
         val intenLogin = Intent(this, MainActivity::class.java)
         startActivity(intenLogin)
     }

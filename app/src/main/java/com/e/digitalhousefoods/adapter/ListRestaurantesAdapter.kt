@@ -32,36 +32,28 @@ class ListRestaurantesAdapter(
         holder.enderecoRestaurante.text = restaurante.endereco
         holder.horarioRestaurante.text = restaurante.horario
         holder.imagemRestaurante.setImageResource(restaurante.imagem)
+
+        //evento de click no item vai chamar o metodo da interface que sera implementado na listaDeRestaurantesFragment
+        holder.itemView.setOnClickListener {
+            listener.restauranteClick(position)
+        }
+
     }
 
+    //pega o tamanho da lista
     override fun getItemCount() = listaRestaurantes.size
 
-
+    //interface que comunica com listaDeRestaurantesFragment
     interface OnRestauranteClickListener {
         fun restauranteClick(position: Int)
     }
 
-    inner class RestaurantesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
-        View.OnClickListener {
-
-        //para que toda a view seja clicavel
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        //montando a view
+    inner class RestaurantesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        //jogando os itens do layout da view para variaveis que possamos manipular
         var nomeRestaurante: TextView = itemView.findViewById(R.id.item_tv_nomeRestaurante)
         val enderecoRestaurante: TextView = itemView.findViewById(R.id.item_tv_endereco)
         val horarioRestaurante: TextView = itemView.findViewById(R.id.item_tv_horario)
         val imagemRestaurante: ImageView = itemView.findViewById(R.id.item_img_rest)
-
-        override fun onClick(v: View?) {
-            val position = adapterPosition
-            if (RecyclerView.NO_POSITION != position)
-                listener.restauranteClick(position)
-        }
-
-
     }
 }
 

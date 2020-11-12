@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_registerFragment_to_listaDeRestaurantesFragment"
             app:destination="@id/listaDeRestaurantesFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/listaDeRestaurantesFragment"
@@ -42,10 +45,17 @@
         <action
             android:id="@+id/action_listaPratosFragment2_to_descricaoPrato"
             app:destination="@id/descricaoPrato" />
+        <action
+            android:id="@+id/action_listaPratosFragment2_to_listaDeRestaurantesFragment"
+            app:destination="@id/listaDeRestaurantesFragment" />
     </fragment>
     <fragment
         android:id="@+id/descricaoPrato"
         android:name="com.e.digitalhousefoods.ui.DescricaoPrato"
-        android:label=" " />
+        android:label=" " >
+        <action
+            android:id="@+id/action_descricaoPrato_to_listaPratosFragment2"
+            app:destination="@id/listaPratosFragment2" />
+    </fragment>
 
 </navigation>

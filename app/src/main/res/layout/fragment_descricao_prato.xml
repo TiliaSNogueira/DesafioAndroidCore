@@ -3,42 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".modelo.DetalhesPrato">
+    android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/frag_detalhe_prato_imagem"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/imagem_do_prato_escolhido"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/descricao_prato_fragment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back" />
 
-        <ImageView
-            android:id="@+id/frag_detalhe_prato_imagem"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:contentDescription="@string/imagem_do_prato_escolhido"
-            android:scaleType="centerCrop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/frag_detalhes_prato_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/nome_do_prato"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/frag_detalhe_prato_imagem"
+        app:layout_constraintStart_toStartOf="@id/frag_detalhe_prato_imagem" />
 
-        <TextView
-            android:id="@+id/frag_detalhes_prato_nome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/nome_do_prato"
-            android:textColor="@color/white"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/frag_detalhe_prato_imagem"
-            app:layout_constraintStart_toStartOf="@id/frag_detalhe_prato_imagem" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/texto_descritivo"
-            android:textColor="#686565"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/frag_detalhe_prato_imagem"
-            app:layout_constraintTop_toBottomOf="@id/frag_detalhe_prato_imagem" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/texto_descritivo"
+        android:textColor="#686565"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/frag_detalhe_prato_imagem"
+        app:layout_constraintTop_toBottomOf="@id/frag_detalhe_prato_imagem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

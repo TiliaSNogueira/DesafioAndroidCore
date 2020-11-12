@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
-    //para configurar a toolbar
-    private lateinit var appBarConfiguration: AppBarConfiguration
+//    //para configurar a toolbar
+//    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,21 +27,21 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.navHostFragment_mainActivity)
 
 
-        //instanciando toolbar
-        setSupportActionBar(main_act_toolbar)
+//        //instanciando toolbar
+//        setSupportActionBar(main_act_toolbar)
 
 
 
 
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        appBarConfiguration = AppBarConfiguration(navController.graph)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
 
 
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
+//    override fun onSupportNavigateUp(): Boolean {
+//        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+//    }
 
 
 }

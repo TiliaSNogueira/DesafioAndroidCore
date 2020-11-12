@@ -3,37 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="#56CFCDCD">
+    android:background="#56CFCDCD"
+    android:orientation="vertical">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="10dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="12dp">
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/item_img_rest"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
+                android:contentDescription="@string/foto_de_capa_do_restaurante"
                 android:scaleType="fitXY"
-                android:contentDescription="@string/foto_de_capa_do_restaurante" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/item_img_rest">
 
 
                 <TextView
@@ -42,8 +44,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/nome_do_restaurante"
                     android:textColor="#2C2C2C"
-                    android:textStyle="bold"
-                    android:textSize="28sp" />
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_tv_endereco"
@@ -61,8 +63,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/fecha_as"
                         android:layout_marginEnd="4dp"
+                        android:text="@string/fecha_as"
                         android:textColor="#686565"
                         android:textSize="14sp" />
 
@@ -78,7 +80,7 @@
 
             </LinearLayout>
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 

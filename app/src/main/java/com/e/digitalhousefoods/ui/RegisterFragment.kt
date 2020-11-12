@@ -2,20 +2,18 @@ package com.e.digitalhousefoods.ui
 
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.e.digitalhousefoods.R
-import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_login.view.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.view.*
 
 
 class RegisterFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +21,13 @@ class RegisterFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val  view =inflater.inflate(R.layout.fragment_register, container, false)
+
+
+        //colocando evento de click na setinha de voltar
+        view.registerFragment_toolbar.setNavigationOnClickListener{
+            //mapa que faz voltar para o fragment login
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
 
         //mudando cor dos campos
         view.frag_register_name.setBackgroundColor(Color.WHITE)
@@ -38,10 +43,7 @@ class RegisterFragment : Fragment() {
             findNavController().navigate(R.id.action_registerFragment_to_listaDeRestaurantesFragment)
         }
 
-
-
         return view
     }
-
 
 }
