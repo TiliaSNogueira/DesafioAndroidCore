@@ -8,54 +8,54 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.e.digitalhousefoods.R
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
 class LoginFragment : Fragment() {
-
-    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
+        mudaCoresButtons(view)
 
-        //mudando cores dos buttons
-        view.frag_login_btnlogin.setBackgroundColor(Color.RED)
-        view.frag_login_btnregister.setBackgroundColor(Color.GRAY)
+        mudaCoresCamposPreenchimento(view)
+
+        //clicar no botao register abre register
+        clickButonRegister(view)
+
+        //clicar no botao register abre lista de restaurantes
+        clickButonLogin(view)
+
+        return view
+    }
 
 
-        //mudando cor de fundo dos campos de preenchimento
-        view.frag_login_email.setBackgroundColor(Color.WHITE)
-        view.frag_login_password.setBackgroundColor(Color.WHITE)
 
 
-        view.frag_login_btnregister.setOnClickListener() {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
-
-        }
-
+    private fun clickButonLogin(view: View) {
         view.frag_login_btnlogin.setOnClickListener() {
             findNavController().navigate(R.id.action_loginFragment_to_listaDeRestaurantesFragment)
         }
-
-
-
-
-        return view
-
-
     }
 
+    private fun clickButonRegister(view: View) {
+        view.frag_login_btnregister.setOnClickListener() {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+    }
+
+    private fun mudaCoresCamposPreenchimento(view: View) {
+        view.frag_login_email.setBackgroundColor(Color.WHITE)
+        view.frag_login_password.setBackgroundColor(Color.WHITE)
+    }
+
+    private fun mudaCoresButtons(view: View) {
+        view.frag_login_btnlogin.setBackgroundColor(Color.RED)
+        view.frag_login_btnregister.setBackgroundColor(Color.GRAY)
+    }
 
 }
 

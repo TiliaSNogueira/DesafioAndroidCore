@@ -1,6 +1,5 @@
 package com.e.digitalhousefoods.ui
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,73 +19,84 @@ class ListaPratosFragment : Fragment(), MenuRestauranteAdapter.onPratoClickListe
 
     //lista estática dos pratos
     val listaPratos: MutableList<Prato> = getPratos()
-
     //adapter
     val adapPratos = MenuRestauranteAdapter(listaPratos, this)
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_lista_pratos, container, false)
 
-
-        //colocando evento de click no navigationIcon
-        view.lista_pratos_fragment_toolbar.setNavigationOnClickListener {
-            //mapa que voltta pra lista de restaurantes
-            findNavController().navigate(R.id.action_listaPratosFragment2_to_listaDeRestaurantesFragment)
-        }
-
-
         //montando a recycler view
-        view.frag_lista_pratos_recyclerview.adapter = adapPratos
-        view.frag_lista_pratos_recyclerview.layoutManager = GridLayoutManager(context, 2)
-        view.frag_lista_pratos_recyclerview.setHasFixedSize(true)
+        configuraAdapter(view)
 
         //pegando o restaurante escolhido que veio no bundle
-        val restEscolhido = arguments?.get("chave") as Restaurante
+        val restEscolhido = recebeRestauranteEscolhido()
 
-        //passando os dados do restaurante escolhiod para o layout
-        view.menu_restaurante_imagemRest.setImageResource(restEscolhido.imagem)
-        view.menu_restaurante_nome.setText(restEscolhido.nome.toString())
+
+        exibeRestauranteEscolhido(view, restEscolhido)
+
+        //colocando evento de click no navigationIcon
+        voltaNavigationIcon(view)
 
         return view
-
     }
 
     override fun pratoClick(position: Int) {
-
-        //pegando o prato clicado e fazendo o bundle para enviar para o fragment descrição do prato
+        //pegando o prato clicado
         val pratoEscolhido = listaPratos[position]
 
         Toast.makeText(context, pratoEscolhido.nome, Toast.LENGTH_SHORT).show()
 
+        // fazendo o bundle para enviar o prato ecolhido para o fragment descrição do prato
         val bundlePrato = bundleOf("chave" to pratoEscolhido)
-
 
         //setando o caminho e mandando o bundle
         findNavController().navigate(R.id.action_listaPratosFragment2_to_descricaoPrato, bundlePrato)
 
     }
 
+    private fun exibeRestauranteEscolhido(
+        view: View,
+        restEscolhido: Restaurante
+    ) {
+        view.menu_restaurante_imagemRest.setImageResource(restEscolhido.imagem)
+        view.menu_restaurante_nome.setText(restEscolhido.nome.toString())
+    }
+
+    private fun recebeRestauranteEscolhido(): Restaurante {
+        val restEscolhido = arguments?.get("chave") as Restaurante
+        return restEscolhido
+    }
+
+    private fun configuraAdapter(view: View) {
+        view.frag_lista_pratos_recyclerview.adapter = adapPratos
+        view.frag_lista_pratos_recyclerview.layoutManager = GridLayoutManager(context, 2)
+        view.frag_lista_pratos_recyclerview.setHasFixedSize(true)
+    }
+
+    private fun voltaNavigationIcon(view: View) {
+        view.lista_pratos_fragment_toolbar.setNavigationOnClickListener {
+            //mapa que volta pra lista de restaurantes
+            findNavController().navigate(R.id.action_listaPratosFragment2_to_listaDeRestaurantesFragment)
+        }
+    }
 
 }
 
-
 fun getPratos(): MutableList<Prato> {
     return mutableListOf(
-        Prato("Salada com molho Gengibre1", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre2", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre3", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre4", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre5", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre6", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre7", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre8", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre9", R.drawable.imgaoyama),
-        Prato("Salada com molho Gengibre10", R.drawable.imgaoyama)
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama),
+        Prato("Salada com molho Gengibre", R.drawable.imgaoyama)
     )
 
 }

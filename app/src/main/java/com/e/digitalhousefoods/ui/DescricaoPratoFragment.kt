@@ -1,12 +1,10 @@
 package com.e.digitalhousefoods.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.e.digitalhousefoods.R
 import com.e.digitalhousefoods.modelo.Prato
@@ -18,23 +16,35 @@ class DescricaoPrato : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_descricao_prato, container, false)
 
-
         //pegando o prato escolhido que veio no bundle
-        val pratoEscolhido = arguments?.get("chave") as Prato
+        val pratoEscolhido = recebePrato()
 
-        //colocando os dados do prato escolhido na imagem e nome do prato exibido
-        view.frag_detalhe_prato_imagem.setImageResource(pratoEscolhido.imagem)
-        view.frag_detalhes_prato_nome.setText(pratoEscolhido.nome)
+        exibePratoEscolhido(view, pratoEscolhido)
 
-
-        //evento que faz voltar para a lista de pratos
-        view.descricao_prato_fragment_toolbar.setNavigationOnClickListener {
-            findNavController().navigate(R.id.action_descricaoPrato_to_listaPratosFragment2)
-        }
+      //  voltaNavigationIcon(view)
 
         return view
+    }
+
+
+//    private fun voltaNavigationIcon(view: View) {
+//        view.descricao_prato_fragment_toolbar.setNavigationOnClickListener {
+//            findNavController().navigate(R.id.action_descricaoPrato_to_listaPratosFragment2)
+//        }
+//    }
+
+    private fun exibePratoEscolhido(
+        view: View,
+        pratoEscolhido: Prato
+    ) {
+        view.frag_detalhe_prato_imagem.setImageResource(pratoEscolhido.imagem)
+        view.frag_detalhes_prato_nome.setText(pratoEscolhido.nome)
+    }
+
+    private fun recebePrato(): Prato {
+        val pratoEscolhido = arguments?.get("chave") as Prato
+        return pratoEscolhido
     }
 }

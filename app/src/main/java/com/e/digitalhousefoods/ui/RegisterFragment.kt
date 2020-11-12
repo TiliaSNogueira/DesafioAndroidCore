@@ -19,31 +19,45 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val  view =inflater.inflate(R.layout.fragment_register, container, false)
-
+        val view = inflater.inflate(R.layout.fragment_register, container, false)
 
         //colocando evento de click na setinha de voltar
-        view.registerFragment_toolbar.setNavigationOnClickListener{
-            //mapa que faz voltar para o fragment login
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
-        }
+        voltaNavigationIcon(view)
 
-        //mudando cor dos campos
+        mudaCorCamposPreenchimento(view)
+
+        mudaCorButton(view)
+
+        //clique no botao register abre lista de restaurantes
+        clickButonRegister(view)
+
+        return view
+    }
+
+
+
+    private fun clickButonRegister(view: View) {
+        view.frag_register_register.setOnClickListener() {
+            findNavController().navigate(R.id.action_registerFragment_to_listaDeRestaurantesFragment)
+        }
+    }
+
+    private fun mudaCorButton(view: View) {
+        view.frag_register_register.setBackgroundColor(Color.RED)
+    }
+
+    private fun mudaCorCamposPreenchimento(view: View) {
         view.frag_register_name.setBackgroundColor(Color.WHITE)
         view.frag_register_email.setBackgroundColor(Color.WHITE)
         view.frag_register_password.setBackgroundColor(Color.WHITE)
         view.frag_register_repeatPassword.setBackgroundColor(Color.WHITE)
+    }
 
-
-        //mudando cor do button
-        view.frag_register_register.setBackgroundColor(Color.RED)
-
-        view.frag_register_register.setOnClickListener(){
-            findNavController().navigate(R.id.action_registerFragment_to_listaDeRestaurantesFragment)
+    private fun voltaNavigationIcon(view: View) {
+        view.registerFragment_toolbar.setNavigationOnClickListener {
+            //mapa que faz voltar para o fragment login
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
-
-        return view
     }
 
 }

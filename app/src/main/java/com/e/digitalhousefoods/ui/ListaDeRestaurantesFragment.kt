@@ -26,17 +26,36 @@ class ListaDeRestaurantesFragment : Fragment(), ListRestaurantesAdapter.OnRestau
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_lista_de_restaurantes, container, false)
 
-
         //configurando o adapter
-        view.fragmentListaDeRestaurantes_recyclerview.adapter = adapRest
-        view.fragmentListaDeRestaurantes_recyclerview.layoutManager = LinearLayoutManager(context)
-        view.fragmentListaDeRestaurantes_recyclerview.setHasFixedSize(true)
+        configuraAdapter(view)
 
         return view
 
+    }
+
+    //quando clicar em um item da lista, vai abrir a tela de pratos do restaurante escolhido
+    override fun restauranteClick(position: Int) {
+        val restEscolhido = listaRestaurantes[position]
+
+        //colocando o restaurante escolhido no bundle
+        val bundleRestEscolhido = bundleOf("chave" to restEscolhido)
+
+        //enviando o mapa e o bundle
+        findNavController().navigate(
+            R.id.action_listaDeRestaurantesFragment_to_listaPratosFragment2,
+            bundleRestEscolhido
+        )
+
+        Toast.makeText(context, restEscolhido.nome, Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun configuraAdapter(view: View) {
+        view.fragmentListaDeRestaurantes_recyclerview.adapter = adapRest
+        view.fragmentListaDeRestaurantes_recyclerview.layoutManager = LinearLayoutManager(context)
+        view.fragmentListaDeRestaurantes_recyclerview.setHasFixedSize(true)
     }
 
 
@@ -59,20 +78,6 @@ class ListaDeRestaurantesFragment : Fragment(), ListRestaurantesAdapter.OnRestau
                 "01:00", R.drawable.imgsisenor
             )
         )
-    }
-
-    override fun restauranteClick(position: Int) {
-
-        //vai abrir o menu do restaurante clicado
-        val restEscolhido = listaRestaurantes[position]
-
-        Toast.makeText(context, restEscolhido.nome, Toast.LENGTH_SHORT).show()
-
-        //colocando o restaurante escolhido no bundle
-        val bundleRestEscolhido = bundleOf("chave" to restEscolhido)
-
-        //enviando o mapa e o bundle
-        findNavController().navigate(R.id.action_listaDeRestaurantesFragment_to_listaPratosFragment2, bundleRestEscolhido)
     }
 }
 
