@@ -31,7 +31,7 @@
                 android:gravity="center"
                 android:text="@string/nome_do_prato_item"
                 android:textColor="#686565"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
