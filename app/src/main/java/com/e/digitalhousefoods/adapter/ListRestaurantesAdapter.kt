@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.e.digitalhousefoods.R
-import com.e.digitalhousefoods.modelo.Restaurante
+import com.e.digitalhousefoods.domain.Restaurante
 
 class ListRestaurantesAdapter(
     private val listaRestaurantes: MutableList<Restaurante>,

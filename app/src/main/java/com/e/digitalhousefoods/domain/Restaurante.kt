@@ -1,4 +1,4 @@
-package com.e.digitalhousefoods.modelo
+package com.e.digitalhousefoods.domain
 
 import java.io.Serializable
 

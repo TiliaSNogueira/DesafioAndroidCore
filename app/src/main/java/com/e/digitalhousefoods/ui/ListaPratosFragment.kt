@@ -11,8 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.e.digitalhousefoods.R
 import com.e.digitalhousefoods.adapter.MenuRestauranteAdapter
-import com.e.digitalhousefoods.modelo.Prato
-import com.e.digitalhousefoods.modelo.Restaurante
+import com.e.digitalhousefoods.domain.Prato
+import com.e.digitalhousefoods.domain.Restaurante
 import kotlinx.android.synthetic.main.fragment_lista_pratos.view.*
 
 class ListaPratosFragment : Fragment(), MenuRestauranteAdapter.onPratoClickListener {

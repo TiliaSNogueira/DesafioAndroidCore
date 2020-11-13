@@ -18,15 +18,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/item_img_rest"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:contentDescription="@string/foto_de_capa_do_restaurante"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 

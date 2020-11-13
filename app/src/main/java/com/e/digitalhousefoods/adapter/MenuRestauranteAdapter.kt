@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.e.digitalhousefoods.R
-import com.e.digitalhousefoods.modelo.Prato
+import com.e.digitalhousefoods.domain.Prato
 
 class MenuRestauranteAdapter(private val listaPratos: MutableList<Prato>, val listener: onPratoClickListener) : RecyclerView.Adapter<MenuRestauranteAdapter.PratosViewhHolder>() {
 

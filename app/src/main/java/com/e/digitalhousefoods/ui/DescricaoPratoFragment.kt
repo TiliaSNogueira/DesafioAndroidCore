@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.e.digitalhousefoods.R
-import com.e.digitalhousefoods.modelo.Prato
+import com.e.digitalhousefoods.domain.Prato
 import kotlinx.android.synthetic.main.fragment_descricao_prato.view.*
 
 class DescricaoPrato : Fragment() {

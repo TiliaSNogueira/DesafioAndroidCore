@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.e.digitalhousefoods.R
 import com.e.digitalhousefoods.adapter.ListRestaurantesAdapter
-import com.e.digitalhousefoods.modelo.Restaurante
+import com.e.digitalhousefoods.domain.Restaurante
 import kotlinx.android.synthetic.main.fragment_lista_de_restaurantes.view.*
 
 class ListaDeRestaurantesFragment : Fragment(), ListRestaurantesAdapter.OnRestauranteClickListener {
